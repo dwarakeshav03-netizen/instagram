@@ -143,7 +143,9 @@ export default function InstaDashboard() {
     try {
       setLoadingLeads(true);
 
-      const res = await fetch("http://localhost:3000/api/leads");
+      const res = await fetch(
+        "http://localhost:3000/api/leads"
+      );
 
       if (!res.ok) {
         throw new Error("Failed to fetch leads");
@@ -200,7 +202,9 @@ export default function InstaDashboard() {
       const data = await response.json();
 
       if (!response.ok) {
-        throw new Error(data?.error || "Failed to send message");
+        throw new Error(
+          data?.error || "Failed to send message"
+        );
       }
 
       // Add returned message immediately
@@ -349,7 +353,9 @@ export default function InstaDashboard() {
           <>
             <div className="pd-top">
 
-              <h3>Instagram Dashboard</h3>
+              <h3>
+                Instagram Dashboard
+              </h3>
 
               <button className="upgrade-btn">
                 Upgrade
@@ -381,7 +387,9 @@ export default function InstaDashboard() {
 
               <div className="pd-chart-card">
 
-                <h4>Messages</h4>
+                <h4>
+                  Messages
+                </h4>
 
                 <ResponsiveContainer
                   width="100%"
@@ -410,7 +418,9 @@ export default function InstaDashboard() {
 
               <div className="pd-chart-card">
 
-                <h4>Leads</h4>
+                <h4>
+                  Leads
+                </h4>
 
                 <ResponsiveContainer
                   width="100%"
@@ -446,25 +456,46 @@ export default function InstaDashboard() {
         ================================================== */}
 
         {activeTab === "conversations" && (
-          <div className="pd-grid">
 
-            {/* CHAT LIST */}
+          <div
+            className="pd-grid"
+            style={{
+              height: "calc(100vh - 20px)",
+              minHeight: 0,
+              overflow: "hidden",
+            }}
+          >
 
-            <div className="pd-chat-list">
+            {/* =================================================
+                CHAT LIST
+            ================================================== */}
+
+            <div
+              className="pd-chat-list"
+              style={{
+                minHeight: 0,
+                overflowY: "auto",
+              }}
+            >
 
               <h3 style={{ padding: "10px" }}>
                 Instagram Conversations
               </h3>
 
               {loadingConversations ? (
+
                 <div style={{ padding: "15px" }}>
                   Loading conversations...
                 </div>
+
               ) : conversations.length === 0 ? (
+
                 <div style={{ padding: "15px" }}>
                   No Instagram conversations yet.
                 </div>
+
               ) : (
+
                 conversations.map((conversation) => (
 
                   <div
@@ -497,22 +528,55 @@ export default function InstaDashboard() {
 
             </div>
 
-            {/* CHAT WINDOW */}
+            {/* =================================================
+                CHAT WINDOW
+            ================================================== */}
 
-            <div className="pd-chat-window">
+            <div
+              className="pd-chat-window"
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                height: "100%",
+                minHeight: 0,
+                overflow: "hidden",
+              }}
+            >
 
               {selectedConversation ? (
                 <>
 
-                  <div className="pd-chat-header">
+                  {/* =================================================
+                      CHAT HEADER
+                  ================================================== */}
 
+                  <div
+                    className="pd-chat-header"
+                    style={{
+                      flexShrink: 0,
+                    }}
+                  >
                     {selectedConversation.name ||
                       selectedConversation.username ||
                       "Instagram User"}
-
                   </div>
 
-                  <div className="pd-messages">
+                  {/* =================================================
+                      MESSAGES AREA
+
+                      THIS AREA SCROLLS ONLY
+                  ================================================== */}
+
+                  <div
+                    className="pd-messages"
+                    style={{
+                      flex: 1,
+                      minHeight: 0,
+                      overflowY: "auto",
+                      overflowX: "hidden",
+                      padding: "10px",
+                    }}
+                  >
 
                     {loadingMessages ? (
 
@@ -547,13 +611,21 @@ export default function InstaDashboard() {
 
                   </div>
 
-                  {/* MESSAGE INPUT */}
+                  {/* =================================================
+                      MESSAGE INPUT
+
+                      THIS STAYS AT BOTTOM
+                  ================================================== */}
 
                   <div
                     style={{
                       display: "flex",
                       gap: "10px",
                       padding: "10px",
+                      flexShrink: 0,
+                      background: "inherit",
+                      borderTop:
+                        "1px solid rgba(255,255,255,0.08)",
                     }}
                   >
 
@@ -571,9 +643,11 @@ export default function InstaDashboard() {
                       placeholder="Type a message..."
                       style={{
                         flex: 1,
+                        minWidth: 0,
                         padding: "10px",
                         borderRadius: "8px",
                         border: "1px solid #444",
+                        outline: "none",
                       }}
                     />
 
@@ -590,9 +664,14 @@ export default function InstaDashboard() {
                   </div>
 
                 </>
+
               ) : (
 
-                <div style={{ padding: "30px" }}>
+                <div
+                  style={{
+                    padding: "30px",
+                  }}
+                >
                   Select a conversation
                 </div>
 
@@ -608,29 +687,44 @@ export default function InstaDashboard() {
         ================================================== */}
 
         {activeTab === "leads" && (
+
           <div className="pd-leads">
 
-            <h3>Captured Leads</h3>
+            <h3>
+              Captured Leads
+            </h3>
 
             <button
               className="save-btn"
               onClick={fetchLeads}
               disabled={loadingLeads}
-              style={{ marginBottom: "20px" }}
+              style={{
+                marginBottom: "20px",
+              }}
             >
-              {loadingLeads ? "Loading..." : "Refresh Leads"}
+              {loadingLeads
+                ? "Loading..."
+                : "Refresh Leads"}
             </button>
 
-            {leads.length === 0 && !loadingLeads ? (
-              <p>No leads found.</p>
+            {leads.length === 0 &&
+            !loadingLeads ? (
+
+              <p>
+                No leads found.
+              </p>
+
             ) : (
+
               <div
                 style={{
                   display: "grid",
                   gap: "15px",
                 }}
               >
+
                 {leads.map((lead) => (
+
                   <div
                     key={lead.id}
                     style={{
@@ -640,6 +734,7 @@ export default function InstaDashboard() {
                       color: "white",
                     }}
                   >
+
                     <h4>
                       {lead.name ||
                         lead.username ||
@@ -647,29 +742,45 @@ export default function InstaDashboard() {
                     </h4>
 
                     <p>
-                      <strong>Instagram ID:</strong>{" "}
+                      <strong>
+                        Instagram ID:
+                      </strong>{" "}
                       {lead.igsid}
                     </p>
 
                     <p>
-                      <strong>Username:</strong>{" "}
-                      {lead.username || "Not available"}
+                      <strong>
+                        Username:
+                      </strong>{" "}
+                      {lead.username ||
+                        "Not available"}
                     </p>
 
                     <p>
-                      <strong>Followers:</strong>{" "}
-                      {lead.follower_count ?? "Not available"}
+                      <strong>
+                        Followers:
+                      </strong>{" "}
+                      {lead.follower_count ??
+                        "Not available"}
                     </p>
 
                     <p>
-                      <strong>Created:</strong>{" "}
+                      <strong>
+                        Created:
+                      </strong>{" "}
                       {lead.created_at
-                        ? new Date(lead.created_at).toLocaleString()
+                        ? new Date(
+                            lead.created_at
+                          ).toLocaleString()
                         : "Not available"}
                     </p>
+
                   </div>
+
                 ))}
+
               </div>
+
             )}
 
           </div>
@@ -680,9 +791,12 @@ export default function InstaDashboard() {
         ================================================== */}
 
         {activeTab === "settings" && (
+
           <div className="pd-settings">
 
-            <h3>Agent Settings</h3>
+            <h3>
+              Agent Settings
+            </h3>
 
             <label>
               Welcome Message

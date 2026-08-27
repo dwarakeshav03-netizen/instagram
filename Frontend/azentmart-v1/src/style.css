@@ -3708,3 +3708,248 @@ input:checked + .slider::before {
     font-size: 28px;
   }
 }
+/* =========================================================
+   INSTAGRAM AGENT - SIGN IN / SIGN UP
+   Violet Theme
+   ========================================================= */
+
+.instagram-auth-page {
+  min-height: 100vh;
+  width: 100%;
+  background:
+    radial-gradient(circle at 10% 20%, rgba(131, 58, 180, 0.18), transparent 35%),
+    radial-gradient(circle at 90% 80%, rgba(193, 53, 132, 0.16), transparent 35%),
+    #080b16;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 40px 20px;
+  box-sizing: border-box;
+}
+
+.instagram-auth-card {
+  width: 100%;
+  max-width: 420px;
+
+  background: rgba(20, 24, 45, 0.96);
+  border: 1px solid rgba(139, 92, 246, 0.25);
+  border-radius: 18px;
+
+  padding: 38px 34px;
+
+  box-shadow:
+    0 25px 70px rgba(0, 0, 0, 0.45),
+    0 0 35px rgba(124, 58, 237, 0.08);
+
+  box-sizing: border-box;
+}
+
+.instagram-auth-logo {
+  width: 52px;
+  height: 52px;
+
+  margin: 0 auto 18px;
+
+  border-radius: 15px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: linear-gradient(
+    135deg,
+    #833ab4,
+    #c13584,
+    #e1306c,
+    #fd1d1d,
+    #fcb045
+  );
+
+  color: white;
+  font-size: 25px;
+
+  box-shadow: 0 8px 25px rgba(193, 53, 132, 0.3);
+}
+
+.instagram-auth-card h1 {
+  margin: 0;
+
+  text-align: center;
+
+  color: #ffffff;
+
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.instagram-auth-subtitle {
+  margin: 9px 0 28px;
+
+  text-align: center;
+
+  color: #a9afd0;
+
+  font-size: 14px;
+}
+
+.instagram-auth-error {
+  margin-bottom: 20px;
+  padding: 11px 14px;
+
+  border-radius: 9px;
+
+  background: rgba(239, 68, 68, 0.10);
+  border: 1px solid rgba(239, 68, 68, 0.25);
+
+  color: #ff6b81;
+
+  text-align: center;
+
+  font-size: 13px;
+}
+
+.instagram-auth-field {
+  margin-bottom: 18px;
+}
+
+.instagram-auth-field label {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: #e7e9f7;
+
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.instagram-auth-field input {
+  width: 100%;
+  height: 48px;
+
+  padding: 0 14px;
+
+  box-sizing: border-box;
+
+  border-radius: 9px;
+
+  border: 1px solid #343b5c;
+
+  background: #151a2d;
+
+  color: #ffffff;
+
+  outline: none;
+
+  font-size: 14px;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.instagram-auth-field input::placeholder {
+  color: #727895;
+}
+
+.instagram-auth-field input:focus {
+  border-color: #8b5cf6;
+
+  background: #181d33;
+
+  box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.12);
+}
+
+.instagram-auth-submit {
+  width: 100%;
+  height: 49px;
+
+  margin-top: 5px;
+
+  border: none;
+  border-radius: 9px;
+
+  background: linear-gradient(
+    90deg,
+    #7c3aed,
+    #a855f7,
+    #c026d3
+  );
+
+  color: #ffffff;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.instagram-auth-submit:hover {
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 10px 25px rgba(139, 92, 246, 0.28);
+}
+
+.instagram-auth-submit:active {
+  transform: translateY(0);
+}
+
+.instagram-auth-submit:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.instagram-auth-footer {
+  margin-top: 22px;
+
+  text-align: center;
+
+  color: #969dbd;
+
+  font-size: 13px;
+}
+
+.instagram-auth-footer a {
+  color: #c084fc;
+
+  text-decoration: none;
+
+  font-weight: 600;
+}
+
+.instagram-auth-footer a:hover {
+  color: #e879f9;
+  text-decoration: underline;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+  .instagram-auth-page {
+    padding: 25px 15px;
+  }
+
+  .instagram-auth-card {
+    padding: 30px 22px;
+    border-radius: 15px;
+  }
+
+  .instagram-auth-card h1 {
+    font-size: 25px;
+  }
+
+}

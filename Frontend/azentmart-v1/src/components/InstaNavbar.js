@@ -17,12 +17,13 @@ function InstaNavbar({ showMarketplace = true }) {
         if (rect.top <= 120 && rect.bottom >= 120) {
           setActive("demo");
         } else if (window.scrollY < 100) {
-          setActive(""); // back to Home
+          setActive("");
         }
       }
     };
 
     window.addEventListener("scroll", handleScroll);
+
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -93,7 +94,7 @@ function InstaNavbar({ showMarketplace = true }) {
               </li>
             )}
 
-            {/* DEMO (SCROLL LINK) */}
+            {/* DEMO */}
             <li className="nav-item">
               <button
                 className={`nav-link btn ${
@@ -113,7 +114,10 @@ function InstaNavbar({ showMarketplace = true }) {
 
             {/* LOGIN */}
             <li className="nav-item">
-              <NavLink to="/instagram-dashboard" className="login-btn">
+              <NavLink
+                to="/instagram-signin"
+                className="login-btn"
+              >
                 Login
               </NavLink>
             </li>

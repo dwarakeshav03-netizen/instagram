@@ -1,38 +1,60 @@
 import React from "react";
+
 import { Routes, Route } from "react-router-dom";
 
 import Navbar from "./components/Navbar";
+
 import Hero from "./components/Hero";
+
 import HowItWorks from "./components/HowItWorks";
+
 import FeaturedAgents from "./components/FeaturedAgents";
+
 import Pricing from "./components/Pricing";
+
 import Testimonials from "./components/Testimonials";
+
 import CTA from "./components/CTA";
+
 import Footer from "./components/Footer";
 
 import Marketplace from "./pages/Marketplace";
+
 import VoiceAgent from "./pages/VoiceAgent";
+
 import AgentDashboard from "./pages/AgentDashboard";
 
 import WhatsappAgent from "./components/WhatsappAgent";
+
 import Wapricing from "./pages/WaPricing";
+
 import WhatsappDashboard from "./pages/WhatsappDashboard";
 
 import InstagramAgent from "./pages/InstagramAgent";
+
 import ConnectInstagram from "./components/ConnectInstagram";
+
 import InstaDashboard from "./components/InstaDashboard";
 
 import FacebookAgent from "./pages/FacebookAgent";
+
 import FacebookDashboard from "./components/FacebookDashboard";
+
 import ConnectFacebook from "./components/ConnectFacebook";
 
 import LegalAgent from "./pages/LegalAgent";
+
 import LegalAgentDashboard from "./components/LegalAgentDashboard";
 
 import YourAIAssistant from "./pages/YourAIAssistant";
+
 import YourAIAuth from "./components/YourAIAuth";
 
 import InterviewDashboard from "./pages/InterviewDashboard";
+
+/* Instagram Authentication */
+import Signin from "./pages/Signin";
+import Signup from "./pages/Signup";
 
 
 function HomePage() {
@@ -100,6 +122,17 @@ function App() {
       <Route
         path="/connect-instagram"
         element={<ConnectInstagram />}
+      />
+
+      {/* Instagram Authentication */}
+      <Route
+        path="/instagram-signin"
+        element={<Signin />}
+      />
+
+      <Route
+        path="/instagram-signup"
+        element={<Signup />}
       />
 
       {/* Instagram Dashboard */}
